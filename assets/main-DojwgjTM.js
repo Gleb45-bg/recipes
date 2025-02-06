@@ -3,7 +3,7 @@ import"./s-C8XKJEYs.js";const l=document.querySelector(".main-content");let r=0,
 <path d="M14 14L10 10" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M21.25 12C21.25 6.89137 17.1086 2.75 12 2.75C6.89137 2.75 2.75 6.89137 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12Z" stroke="#1B1B1B" stroke-width="1.5"/>
 </svg>
-</button>`,l.innerHTML=e.slice(r*15,r*15+15).map((t,a)=>{let n=t.tags.map(i=>`<button class="tag" data-tag='${i}'>${i}</button>`).join("");return`
+</button>`,l.innerHTML=e.slice(r*15,r*15+15).map((t,a)=>{let n=t.tags.map(i=>`<button class="tag" data-tag='${i + 15*r}'>${i}</button>`).join("");return`
                         <div class="recipe-card" data-key='${a}'>
                             <h3>${t.name}</h3>
                             <img src="${t.image}" alt="${t.name}">
@@ -23,7 +23,7 @@ import"./s-C8XKJEYs.js";const l=document.querySelector(".main-content");let r=0,
 <path d="M14 14L10 10" stroke="#1B1B1B" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M21.25 12C21.25 6.89137 17.1086 2.75 12 2.75C6.89137 2.75 2.75 6.89137 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12Z" stroke="#1B1B1B" stroke-width="1.5"/>
 </svg>
-</button>`,l.innerHTML=e.map((t,a)=>{let n=t.tags.map(i=>`<button class="tag" data-tag='${i}'>${i}</button>`).join("");return`
+</button>`,l.innerHTML=e.map((t,a)=>{let n=t.tags.map(i=>`<button class="tag" data-tag='${i + 15*r}'>${i}</button>`).join("");return`
                         <div class="recipe-card" data-key='${a}'>
                             <h3>${t.name}</h3>
                             <img src="${t.image}" alt="${t.name}">
@@ -38,7 +38,7 @@ import"./s-C8XKJEYs.js";const l=document.querySelector(".main-content");let r=0,
                                     </svg>
                                 </button>
                             </div>
-                        </div>`}).join(""),document.querySelector("footer").classList.toggle("dis")),document.querySelector("footer").classList.remove("load"),m(),L(),v(),h(),b()}catch(s){l.innerHTML="<h1 class='error-mess'>Something went wrong</h1>",l.classList.toggle("error"),console.error(s)}finally{document.querySelector("footer").classList.toggle("load")}else try{const s=await fetch("https://dummyjson.com/recipes");if(!s.ok){l.innerHTML="<h1 class='error-mess'>Something went wrong</h1>",l.classList.toggle("error");return}const o=await s.json();g=o.recipes,o.recipes.length>=15?l.innerHTML=o.recipes.slice(r*15,r*15+15).map((e,t)=>{t=t+15*r;let a=e.tags.map(n=>`<button class="tag" data-tag='${n}'>${n}</button>`).join("");return`
+                        </div>`}).join(""),document.querySelector("footer").classList.toggle("dis")),document.querySelector("footer").classList.remove("load"),m(),L(),v(),h(),b()}catch(s){l.innerHTML="<h1 class='error-mess'>Something went wrong</h1>",l.classList.toggle("error"),console.error(s)}finally{document.querySelector("footer").classList.toggle("load")}else try{const s=await fetch("https://dummyjson.com/recipes");if(!s.ok){l.innerHTML="<h1 class='error-mess'>Something went wrong</h1>",l.classList.toggle("error");return}const o=await s.json();g=o.recipes,o.recipes.length>=15?l.innerHTML=o.recipes.slice(r*15,r*15+15).map((e,t)=>{t=t+15*r;let a=e.tags.map(n=>`<button class="tag" data-tag='${n + 15*r}'>${n}</button>`).join("");return`
                         <div class="recipe-card" data-key='${t}'>
                             <h3>${e.name}</h3>
                             <img src="${e.image}" alt="${e.name}">
@@ -53,7 +53,7 @@ import"./s-C8XKJEYs.js";const l=document.querySelector(".main-content");let r=0,
                                     </svg>
                                 </button>
                             </div>
-                        </div>`}).join(""):(l.innerHTML=o.recipes.map((e,t)=>{let a=e.tags.map(n=>`<button class="tag" data-tag='${n}'>${n}</button>`).join("");return`
+                        </div>`}).join(""):(l.innerHTML=o.recipes.map((e,t)=>{let a=e.tags.map(n=>`<button class="tag" data-tag='${n + 15*r}'>${n}</button>`).join("");return`
                         <div class="recipe-card" data-key='${t}'>
                             <h3>${e.name}</h3>
                             <img src="${e.image}" alt="${e.name}">
